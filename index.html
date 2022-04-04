@@ -4,252 +4,16 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>CSS Positioning</title>
+<title>About Collapse</title>
+
+<!--
+Create Halftone Images:
+https://www.picturetopeople.org/image_effects/photo-halftone/halftone-image-generator.html
+-->
+
 <script src="https://kit.fontawesome.com/5b2f3279e9.js" crossorigin="anonymous"></script>
-
-<!-- https://www.picturetopeople.org/image_effects/photo-halftone/halftone-image-generator.html -->
 <link rel="stylesheet" href="https://use.typekit.net/imw1ths.css">
-
-<style>
-* {
-    -webkit-font-smoothing: antialiased;
-}
-html, body {
-    width: 100vw;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    scroll-behavior: smooth;
-	overflow-x: hidden;
-	font-family: sweet-sans-pro, sans-serif;
-	color: #333;
-}
-h2, h3 {
-	font-family: mixta-sharp, serif;
-	font-weight: 600;
-	font-style: normal;
-	color: #1e1e1e;
-}
-h2 {
-    font-size: 40px;
-    line-height: 1.2;
-    margin: 0;
-}
-.section-logo {
-    width: 100px;
-    height: auto;
-}
-.heading {
-    margin: 10px 0 30px;
-}
-.subhead {
-    font-family: sweet-sans-pro, sans-serif;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1.5px;
-    color: #333;
-    border-bottom: 2px solid;
-    display: inline-block;
-    padding: 2px 0;
-}
-h3 {
-    font-size: 24px;
-    line-height: 1.2;
-    margin: 0 0 2px;
-}
-p {
-    font-size: 15px;
-    line-height: 1.4;
-}
-small {
-	font-family: pt-mono, monospace;
-	font-size: 10px;
-    line-height: 1.5;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    display: block;
-}
-img {
-	max-width: 100%;
-}
-
-.side-text {
-	position: absolute;
-}
-.side-text.left {
-	transform: rotate(-90deg);
-	left: -64px;
-}
-.side-text.right {
-	transform: rotate(90deg);
-	right: -64px;
-}
-.content {
-    position: relative;
-    z-index: 1;
-}
-.team-container {
-	background: #F2F0EB;
-	text-align: center;
-	padding: 100px;
-}
-.person {
-    position: relative;
-}
-.person:hover, .close:hover {
-	cursor: pointer;
-}
-.close:hover {
-	opacity: 1;
-}
-.person img {
-	max-width: 260px;
-	height: auto;
-	transition: 0.1s linear;
-}
-.asterisk {
-	display: none;
-	font-size: 60px;
-    position: absolute;
-    top: 85px;
-    bottom: auto;
-    left: 35px;
-    right: auto;
-    color: #9B9328;
-}
-.person:nth-of-type(3n-1) .asterisk {
-	color: #F9B6A6;
-	top: 35px;
-    bottom: auto;
-    left: auto;
-    right: 50px;
-}
-.person:nth-of-type(3n) .asterisk {
-	color: #8FC4BA;
-	top: 160px;
-    bottom: auto;
-    left: auto;
-    right: 50px;
-}
-.active {
-	display: block;
-    animation: spin 0.3s;
-}
-.fade {
-	opacity: 0.25;
-	transform: scale(0.95);
-}
-.close {
-    right: 20px;
-    top: 120px;
-    position: absolute;
-    font-size: 24px;
-    color: #333333;
-    z-index: 2;
-}
-.about {
-    align-items: center;
-    position: relative;
-    display: none;
-    padding-top: 100px;
-    transition: 0.4s;
-    height: auto;
-}
-.shrink {
-    animation: shrinkHeight 0.4s;
-    transition: 0.4s;
-    height: 0;
-}
-.team {
-    display: flex;
-    align-items: center;
-    position: relative;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.col {
-    width: 50%;
-    top: -100px;
-    opacity: 0;
-}
-.col.col-1 {
-    position: relative;
-}
-.about .col-2 {
-    text-align: left;
-    position: relative;
-}
-.col img {
-    max-width: 83.33%;
-    margin: auto;
-}
-.col .content {
-    max-width: 66.66%;
-    margin: auto;
-}
-
-
-
-
-@keyframes spin {
-  0% {
-	opacity: 0;
-    transform: scale(0) rotate(0deg);
-  }
-  20% {
-	opacity: 0;
-  }
-  100% {
-	opacity: 1;
-    transform: scale(1) rotate(360deg);
-  }
-}
-@keyframes shrinkHeight {
-  0% {
-	height: auto;
-  }
-  100% {
-	height: 0;
-  }
-}
-@media screen and (max-width: 767px) {
-	.team-container {
-	    padding: 80px 20px;
-	}
-	.col {
-	    width: 100%;
-	}
-	small.side-text {
-	    display: none;
-	}
-	.col img {
-	    max-width: 100vw;
-	    margin: 0 -20px 40px;
-	}
-	.close {
-	    right: 0px;
-	    top: 100px;
-	}
-	.col .content {
-	    max-width: 85%;
-	    margin: 0 auto -40px;
-	}
-	.person {
-	    margin-top: 30px;
-	    width: 100%;
-	}
-	.person:nth-of-type(1) {
-	    margin-top: 0;
-	}
-	.asterisk {
-	    left: 22%;
-	}
-	.person:nth-of-type(3n-1) .asterisk, .person:nth-of-type(3n) .asterisk {
-	    right: 27%;
-	}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -318,11 +82,15 @@ let team = [
 	}
 ];
   $('.person').hover(function() {
-    $('.person img').addClass('fade');
-	$(this).find('img').removeClass('fade');
+	if($(window).width() > 767) {
+        $('.person img').addClass('fade');
+        $(this).find('img').removeClass('fade');
+    }
     $(this).find('.asterisk').addClass('active fa-light fa-asterisk');
   }, function() {
-    $('.person img').removeClass('fade');
+	if($(window).width() > 767) {
+        $('.person img').removeClass('fade');
+    }
     $(this).find('.asterisk').removeClass('active fa-light fa-asterisk');
   });
   

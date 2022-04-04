@@ -1,0 +1,248 @@
+/* —————————— General —————————— */
+* {
+    -webkit-font-smoothing: antialiased;
+}
+html, body {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    scroll-behavior: smooth;
+	overflow-x: hidden;
+	font-family: sweet-sans-pro, sans-serif;
+	color: #333;
+}
+/* —————————— Typography —————————— */
+h2, h3 {
+	font-family: mixta-sharp, serif;
+	font-weight: 600;
+	font-style: normal;
+	color: #1e1e1e;
+}
+h2 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin: 0;
+}
+h3 {
+    font-size: 24px;
+    line-height: 1.2;
+    margin: 0 0 2px;
+}
+p {
+    font-size: 15px;
+    line-height: 1.4;
+}
+small {
+	font-family: pt-mono, monospace;
+	font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+}
+.heading {
+    margin: 10px 0 30px;
+}
+.subhead {
+    font-family: sweet-sans-pro, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    color: #333;
+    border-bottom: 2px solid;
+    display: inline-block;
+    padding: 2px 0;
+}
+.side-text {
+	position: absolute;
+}
+.side-text.left {
+	transform: rotate(-90deg);
+	left: -64px;
+}
+.side-text.right {
+	transform: rotate(90deg);
+	right: -64px;
+}
+@media screen and (max-width: 767px) {
+	small.side-text {
+	    display: none;
+	}
+}
+/* —————————— Images —————————— */
+img {
+	max-width: 100%;
+}
+.section-logo {
+    width: 100px;
+    height: auto;
+}
+/* —————————— Team Container —————————— */
+.team-container {
+	background: #F2F0EB;
+	text-align: center;
+	padding: 100px;
+}
+.team {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.person {
+    position: relative;
+}
+.person img {
+	max-width: 260px;
+	height: auto;
+	transition: 0.1s linear;
+}
+.fade {
+	opacity: 0.25;
+	transform: scale(0.95);
+}
+@media screen and (max-width: 767px) {
+	.team-container {
+	    padding: 80px 20px;
+	}
+	.person {
+	    margin-top: 30px;
+	    width: 100%;
+	}
+	.person:nth-of-type(1) {
+	    margin-top: 0;
+	}
+}
+/* —————————— About Container —————————— */
+.about {
+    align-items: center;
+    position: relative;
+    display: none;
+    padding-top: 100px;
+    transition: 0.4s;
+    height: auto;
+}
+.shrink {
+    animation: shrinkHeight 0.4s;
+    transition: 0.4s;
+    height: 0;
+}
+.col {
+    width: 50%;
+    top: -100px;
+    opacity: 0;
+}
+.col.col-1 {
+    position: relative;
+}
+.about .col-2 {
+    text-align: left;
+    position: relative;
+}
+.col img {
+    max-width: 83.33%;
+    margin: auto;
+}
+.col .content {
+    max-width: 66.66%;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+@keyframes shrinkHeight {
+  0% {
+	height: auto;
+  }
+  100% {
+	height: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+	.col {
+	    width: 100%;
+	}
+	.col img {
+	    max-width: 100vw;
+	    margin: 0 -20px 40px;
+	    width: 100vw;
+	}
+	.col .content {
+	    max-width: 85%;
+	    margin: 0 auto -40px;
+	}
+}
+/* —————————— Asterisk Animation —————————— */
+.asterisk {
+	display: none;
+	font-size: 60px;
+    position: absolute;
+    top: 85px;
+    bottom: auto;
+    left: 35px;
+    right: auto;
+    color: #9B9328;
+}
+.person:nth-of-type(3n-1) .asterisk {
+	color: #F9B6A6;
+	top: 35px;
+    bottom: auto;
+    left: auto;
+    right: 50px;
+}
+.person:nth-of-type(3n) .asterisk {
+	color: #8FC4BA;
+	top: 160px;
+    bottom: auto;
+    left: auto;
+    right: 50px;
+}
+.active {
+	display: block;
+    animation: spin 0.3s;
+}
+.person:hover {
+	cursor: pointer;
+}
+@keyframes spin {
+  0% {
+	opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  20% {
+	opacity: 0;
+  }
+  100% {
+	opacity: 1;
+    transform: scale(1) rotate(360deg);
+  }
+}
+@media screen and (max-width: 767px) {
+	.asterisk {
+	    left: 22%;
+	}
+	.person:nth-of-type(3n-1) .asterisk, .person:nth-of-type(3n) .asterisk {
+	    right: 27%;
+	}
+}
+/* —————————— Close X —————————— */
+.close {
+    right: 20px;
+    top: 120px;
+    position: absolute;
+    font-size: 24px;
+    color: #333333;
+    z-index: 2;
+}
+.close:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+	.close {
+	    right: 0px;
+	    top: 100px;
+	}
+}
